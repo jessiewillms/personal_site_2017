@@ -12,12 +12,24 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			
-			<?php get_template_part( 'template-parts/content', 'header' ); ?>
-			<?php get_template_part( 'template-parts/content', 'about' ); ?>
-			<?php get_template_part( 'template-parts/content', 'work-items' ); ?>
-			<?php get_template_part( 'template-parts/content', 'services' ); ?>
-			<?php get_template_part( 'template-parts/content', 'newsletter' ) ?>
-			<?php get_template_part( 'template-parts/content', 'contact' ); ?>
+			<div class="wrapper--outer">
+				<?php get_template_part( 'template-parts/content', 'header' ); ?>
+			</div>
+			<div class="wrapper--outer">
+				<?php get_template_part( 'template-parts/content', 'about' ); ?>
+			</div>
+			<div class="wrapper--outer">
+				<?php get_template_part( 'template-parts/content', 'work-items' ); ?>
+			</div>
+			<div class="wrapper--outer">
+				<?php get_template_part( 'template-parts/content', 'services' ); ?>
+			</div>
+			<div class="wrapper--outer">
+				<?php get_template_part( 'template-parts/content', 'newsletter' ) ?>
+			</div>
+			<div class="wrapper--outer">
+				<?php get_template_part( 'template-parts/content', 'contact' ); ?>
+			</div>
 
 			<!-- <?php
 				//while ( have_posts() ) : the_post();

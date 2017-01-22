@@ -12,9 +12,8 @@
 ?>
 
 	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer wrapper--inner" role="contentinfo">
-		<div class="site-info">
+	<footer id="colophon" class="wrapper--outer site-footer " role="contentinfo">
+		<div class="wrapper--inner site-info">
 			
 			<?php get_template_part( 'template-parts/content', 'social-media' ); ?>
 			

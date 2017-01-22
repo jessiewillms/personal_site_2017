@@ -34,8 +34,11 @@
 			<?php 
 			$big_logo = get_field('logo_full_logo','option');
 			$small_logo = get_field('logo_icon_logo','option');
-			if( !empty($big_logo) ): ?>
-				<img src="<?php echo $big_logo['url']; ?>" alt="<?php echo $big_logo['alt']; ?>" />
+			if( !empty($big_logo) ):
+
+			echo '<a href="' . get_site_url() . '"><img src="' . $big_logo['url'] . '" alt="' . $big_logo['alt'] . '" /></a>';
+				
+			?>
 				<!--<img src="<?php echo $small_logo['url']; ?>" style="display: none;" alt="<?php echo $small_logo['alt']; ?>" />-->
 			<?php endif; ?>
 		</nav><!-- #site-navigation -->

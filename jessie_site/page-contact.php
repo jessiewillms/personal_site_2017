@@ -70,7 +70,11 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-
+			<div class="wrapper--inner">
+				<?php 
+				gravity_form( 1, false, false, false, '', false );
+				?>
+			</div>
 
 			<!-- 
 			==========================================

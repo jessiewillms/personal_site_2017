@@ -72,6 +72,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	text-align: center;
 }
 
+.wrapper--inner {
+	padding: 25px 0;
+}
+
+.wrapper--outer:nth-of-type(odd) {
+	background: #eaeef1;
+}
+
 @media (min-width: 767px) {
 	.wrapper--inner {
 		max-width: var(--width);
@@ -179,7 +187,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 
 
 
-
+#gform_wrapper_1 {
+	display: block !important;
+	margin: 0 auto;
+}
 
 
 
