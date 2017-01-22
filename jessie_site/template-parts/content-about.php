@@ -30,7 +30,19 @@ if( have_rows('homepage_about_blocks') ):
     while ( have_rows('homepage_about_blocks') ) : the_row();
 
         // display a sub field value
-        the_sub_field('sub_field_name');
+        $make_title = get_sub_field('about_block_title');
+        $make_sub_title = get_sub_field('about_block_subtitle');
+        $make_img_url = '<img src="' . get_sub_field('about_block_image')['url'] . '">';
+
+
+        echo '<div class="grid--one-third">';
+        	echo '<h3>' . $make_title . '</h3>';
+        	echo '<p>' . $make_sub_title . '</p>';
+        	echo $make_img_url;
+        echo '</div>'; // ends .grid--one-third
+
+
+        // alt="' . the_sub_field('about_block_image')['url'] . '"
 
     endwhile;
     echo '</section>'; // end .wrapper--inner

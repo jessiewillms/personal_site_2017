@@ -25,6 +25,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ----------------------------------------------------------------
 # Normalize
 # Typography
+# Grid
 # Elements
 # Forms
 # Navigation
@@ -266,6 +267,7 @@ input,
 select,
 textarea {
 	color: #404040;
+	background: red;
 	font-family: 'Roboto', 'Georgia', serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -335,6 +337,15 @@ ins {
 
 big {
 	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+
+.grid--one-third {
+	max-width: calc(100% / 3);
+	float: left;
 }
 
 /*--------------------------------------------------------------
@@ -414,6 +425,9 @@ table {
 	width: 100%;
 }
 
+img {
+	max-width: 100%;
+}
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
