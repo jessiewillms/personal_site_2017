@@ -47,6 +47,173 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+
+:root {
+  --padding: 10px;
+  --padding_large: 50px;
+  --white: white;
+  --width: 800px;
+}
+
+.align-center {
+	display: block;
+	margin: 0 auto;
+}
+
+.text--align-center {
+	text-align: center;
+}
+
+.wrapper--header {
+	border: 2px solid purple;
+}
+
+.wrapper--header {
+	text-align: center;
+}
+
+@media (min-width: 767px) {
+	.wrapper--inner {
+		max-width: var(--width);
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.wrapper--inner-small {
+	max-width: 50%;
+}
+
+.wrapper--inner-small .text--btn-small {
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+
+.wrapper--small-padding {
+	padding: var(--padding);
+}
+
+#site-navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	margin: 0 auto;
+	padding: var(--padding_large) var(--padding) var(--padding) var(--padding);
+	background: var(--white);
+}
+
+.entry-header {
+	padding-top: calc(var(--padding_large) * 2);
+}
+
+.menu {
+	float: right;
+	text-align: center;
+}
+.menu li {
+	padding: var(--padding);
+}
+
+.main-navigation img {
+	max-width: 150px;
+}
+
+.flex--parent-row {
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.flex--parent-center {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.flex--child-item {
+}
+
+.flex--child-item a {
+	text-align: center;
+	padding: 50px;
+	margin: 0;
+	color: var(--white);;
+}
+
+.wrapper-third-child {
+	padding: 15px;
+	flex-basis: calc(100% / 3 );
+}
+
+.wrapper-third-child a {
+	padding: 50px;
+	
+}
+
+
+.flex-parent-column {
+	flex-direction: column;
+	border: 1px solid green;
+}
+
+
+.flex-parent-column > p {
+	flex-grow: 1;
+	min-height: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -258,6 +425,25 @@ th {
 	padding: 0;
 }
 
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}
+
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -267,8 +453,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	background: red;
-	font-family: 'Roboto', 'Georgia', serif;
+	font-family: 'Lato', 'Georgia', serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -343,9 +528,10 @@ big {
 # Grid
 --------------------------------------------------------------*/
 
-.grid--one-third {
+/*.grid--one-third {
 	max-width: calc(100% / 3);
-	width: calc(100% / 3);
+	width: calc( var(--width) / 3);
+	height: calc( var(--width) / 3);
 	float: left;
 }
 
@@ -353,7 +539,7 @@ big {
 	width: calc(100% / 3);
 	height: 300px;
 }
-
+*/
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -523,6 +709,9 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
+	text-decoration: none;
+}
+/*a {
 	color: royalblue;
 }
 
@@ -534,7 +723,7 @@ a:hover,
 a:focus,
 a:active {
 	color: midnightblue;
-}
+}*/
 
 a:focus {
 	outline: thin dotted;

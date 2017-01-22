@@ -11,13 +11,13 @@
 
 <?php if ( $hp_about_headline = get_field('homepage_about_headline') ) {
 	
-	echo '<section class="wrapper--inner">';
+	echo '<header class="wrapper--header wrapper--inner clearfix">';
 		echo '<h2>' . $hp_about_headline . '</h2>';
 
 		if ( $hp_about_subheadline = get_field('homepage_about_subheadline') ) {
 			echo '<p>' . $hp_about_subheadline . '</p>';
 		}
-	echo '</section>';
+	echo '</header>';
 } ?>
 
 
@@ -25,7 +25,7 @@
 
 // check if the repeater field has rows of data
 if( have_rows('homepage_about_blocks') ):
-	echo '<section class="wrapper--inner">';
+	echo '<section class="wrapper--inner clearfix">';
  	// loop through the rows of data
     while ( have_rows('homepage_about_blocks') ) : the_row();
 
@@ -35,11 +35,11 @@ if( have_rows('homepage_about_blocks') ):
         $make_img_url = '<img src="' . get_sub_field('about_block_image')['url'] . '">';
 
 
-        echo '<div class="grid--one-third">';
+        echo '<div class="wrapper-third-child">';
         	echo '<h3>' . $make_title . '</h3>';
         	echo '<p>' . $make_sub_title . '</p>';
         	echo $make_img_url;
-        echo '</div>'; // ends .grid--one-third
+        echo '</div>'; // ends .wrapper-third-child
 
 
         // alt="' . the_sub_field('about_block_image')['url'] . '"
