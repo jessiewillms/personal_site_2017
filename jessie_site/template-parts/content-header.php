@@ -16,7 +16,7 @@ $image = get_field('header_background_image');
 
 if( !empty($image) ): ?>
 
-	<header class="entry-header aligncenter clear text--align-center clearfix" style="background-image: url('<?php echo $image['url']; ?>');">
+	<header class="entry-header text--align-center clearfix" style="background-image: url('<?php echo $image['url']; ?>');">
 		
 		<div class="wrapper--inner">
 			<h1><?php echo get_the_title(); ?></h1>

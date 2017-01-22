@@ -41,7 +41,7 @@ if ( $query->have_posts() ) {
 	while ( $query->have_posts() ) {
 		$query->the_post();
 		
-		echo '<div class="wrapper-third-child flex--parent-center _flex--child-item" style="background-image:url(' . 'https://placebear.com/300/300' . ')">';
+		echo '<div class="wrapper-third-child wrapper-third-child-height flex--parent-center" style="background-image:url(' . 'https://placebear.com/300/300' . ')">';
 			
 			echo '<a href="' . get_permalink() . '">View</a>'; 
 		

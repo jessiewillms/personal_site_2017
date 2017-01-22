@@ -25,7 +25,7 @@
 
 // check if the repeater field has rows of data
 if( have_rows('homepage_about_blocks') ):
-	echo '<section class="wrapper--inner clearfix">';
+	echo '<section class="wrapper--inner flex--parent-center ">';
  	// loop through the rows of data
     while ( have_rows('homepage_about_blocks') ) : the_row();
 
@@ -35,7 +35,7 @@ if( have_rows('homepage_about_blocks') ):
         $make_img_url = '<img src="' . get_sub_field('about_block_image')['url'] . '">';
 
 
-        echo '<div class="wrapper-third-child">';
+        echo '<div class="wrapper-third-child flex-parent-column ">';
         	echo '<h3>' . $make_title . '</h3>';
         	echo '<p>' . $make_sub_title . '</p>';
         	echo $make_img_url;

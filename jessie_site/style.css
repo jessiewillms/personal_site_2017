@@ -65,7 +65,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 }
 
 .wrapper--header {
-	border: 2px solid purple;
+	/*border: 2px solid purple;*/
 }
 
 .wrapper--header {
@@ -82,6 +82,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 
 .wrapper--inner-small {
 	max-width: 50%;
+	padding: var(--padding_large);
 }
 
 .wrapper--inner-small .text--btn-small {
@@ -147,25 +148,33 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 }
 
 .wrapper-third-child {
-	padding: 15px;
-	flex-basis: calc(100% / 3 );
+	/*padding: 15px;*/
+	flex-basis: calc(800px / 3 - 20px);
+	margin: 10px;
 }
 
-.wrapper-third-child a {
-	padding: 50px;
-	
+.wrapper-third-child-height {
+	height: calc(800px / 3 - 20px);
+	align-items: center;
 }
+
+/*
+.wrapper-third-child a {
+	padding: 90px;
+	border: 1px solid var(--white);
+}
+*/
+
 
 
 .flex-parent-column {
 	flex-direction: column;
-	border: 1px solid green;
 }
 
 
 .flex-parent-column > p {
 	flex-grow: 1;
-	min-height: 70px;
+	min-height: 100px;
 }
 
 
@@ -543,15 +552,7 @@ big {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-html {
-	box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
+* { box-sizing: border-box }
 
 body {
 	background: #fff; /* Fallback for when there is no custom background color defined. */
