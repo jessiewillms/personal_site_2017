@@ -16,6 +16,14 @@ if ( ! function_exists( 'jessie_site_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function jessie_site_setup() {
+	
+	if(function_exists('acf_add_options_page')) { 
+
+		acf_add_options_page();
+		acf_add_options_sub_page('Header');
+		acf_add_options_sub_page('Footer');
+
+	}
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
