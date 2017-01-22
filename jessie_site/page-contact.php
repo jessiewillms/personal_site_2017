@@ -16,17 +16,35 @@
 
 get_header(); ?>
 
+
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main post-<?php the_ID(); ?>" role="main">
 		
+			<!-- 
+			==========================================
+
+			Section: Header with background image + buttons
+
+			==========================================
+			-->
+
 			<?php 
 
-			$image = get_the_post_thumbnail();
+			$image = get_the_post_thumbnail_url();
 
 			if( !empty($image) ): ?>
-
-				<header class="entry-header text--align-center clearfix" style="background-image: url('<?php echo $image['url']; ?>');">
+			
+				<header class="entry-header text--align-center clearfix" style="background-image:url(' <?php echo $image ?> ')">
 					
+					<!-- 
+					==========================================
+
+					Section: Contact Page Title + Sub-title
+
+					==========================================
+					-->
+
 					<div class="wrapper--inner">
 						<h1><?php echo get_the_title(); ?></h1>
 						<?php 
@@ -39,6 +57,13 @@ get_header(); ?>
 						?>
 					
 					
+						<!-- 
+						==========================================
+
+						Section: Contact Page Buttons
+
+						==========================================
+						-->
 						<?php
 
 						// check if the repeater field has rows of data
@@ -70,11 +95,7 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			<div class="wrapper--inner">
-				<?php 
-				gravity_form( 1, false, false, false, '', false );
-				?>
-			</div>
+			
 
 			<!-- 
 			==========================================
@@ -94,6 +115,18 @@ get_header(); ?>
 				?>
 			</section>
 			
+			<!-- 
+			==========================================
+
+			Section: Gravity Form
+
+			==========================================
+			-->
+			<div class="wrapper--inner">
+				<?php 
+				gravity_form( 1, false, false, false, '', false );
+				?>
+			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

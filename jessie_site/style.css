@@ -48,11 +48,24 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 
+
 :root {
   --padding: 10px;
   --padding_large: 50px;
-  --white: white;
+  --white: #f7f7f7;
   --width: 800px;
+  --dark_grey: #37343e;
+  --blue: #4b9dd6;
+  --orange:#f69321;
+  --yellow:#fed713;
+  --color_1: ;
+}
+
+li { list-style-type: none; }
+
+ul {
+	margin: 0;
+	padding: 0;
 }
 
 .align-center {
@@ -64,6 +77,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	text-align: center;
 }
 
+.wrapper--header h2 + p::after {
+	content: "";
+	display: block;
+	margin: var(--padding) auto;
+	border-bottom: 2px solid var(--color_1);
+	max-width: 75px;
+}
 .wrapper--header {
 	/*border: 2px solid purple;*/
 }
@@ -136,6 +156,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
     flex-direction: row;
 }
 
+.align-items-flex-end {
+	align-items: flex-end;
+}
+
 .flex--parent-center {
     display: flex;
     flex-wrap: wrap;
@@ -143,7 +167,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
     align-content: center;
     justify-content: center;
 }
-
 
 .flex--child-item {
 }
@@ -153,6 +176,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	padding: 50px;
 	margin: 0;
 	color: var(--white);;
+}
+
+.wrapper--flex-child-sixth {
+	flex-basis: calc(100% / 6 - 10px);
+	margin: 5px;
+	padding: 10px;
+}
+
+.wrapper--flex-child-half {
+	flex-basis: calc(100% / 2 - 10px);
+	margin: 5px;
+	padding: 10px;
 }
 
 .wrapper-third-child {
@@ -166,38 +201,66 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	align-items: center;
 }
 
-/*
-.wrapper-third-child a {
-	padding: 90px;
-	border: 1px solid var(--white);
-}
-*/
-
-
+/*================ Section: Flexbox Stuff ================*/
 
 .flex-parent-column {
 	flex-direction: column;
 }
-
 
 .flex-parent-column > p {
 	flex-grow: 1;
 	min-height: 100px;
 }
 
-
-
 #gform_wrapper_1 {
 	display: block !important;
 	margin: 0 auto;
 }
 
+/*================ Section: Grid for Images ================*/
 
+.grid--one-image img {
+	max-width: calc(100% - 10px);
+	margin: 2.5px 5px;
+}
 
+.grid--two-images img {
+	max-width: calc(100% / 2 - 10px);
+	margin: 2.5px 5px;
+}
 
+.grid--three-images img {
+	max-width: calc(100% / 3 - 10px);
+	margin: 2.5px 5px;
+}
 
+/*================ Section: buttons ================*/
 
+.button--large a {
+	padding: var(--padding);
+}
 
+.button--main-color {
+	background: var(--blue);
+	color: var(--white);
+}
+.button--main-color::hover {
+	background: darken(var(--blue));
+}
+
+.button--main-color a {
+	text-decoration: none;
+	color: var(--white);
+	
+	display: block;
+}
+
+.button--center {
+	display: block;
+	margin: var(--padding) auto;
+	text-align: center;
+	max-width: 25%;
+}
 
 
 
@@ -588,13 +651,14 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-ul,
 ol {
 	margin: 0 0 1.5em 3em;
 }
 
 ul {
 	list-style: disc;
+	padding: 0;
+	margin: 0;
 }
 
 ol {
