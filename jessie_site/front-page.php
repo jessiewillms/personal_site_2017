@@ -13,8 +13,12 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			
 			<?php get_template_part( 'template-parts/content', 'header' ); ?>
+			<br>
 			<?php get_template_part( 'template-parts/content', 'about' ); ?>
+			<br style="clear:both;">
 			<?php get_template_part( 'template-parts/content', 'work-items' ); ?>
+			<br style="clear:both;">
+			<?php get_template_part( 'template-parts/content', 'services' ); ?>
 			
 
 			<!-- <?php
