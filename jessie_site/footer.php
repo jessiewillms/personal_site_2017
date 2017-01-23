@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 	<footer id="colophon" class="wrapper--outer site-footer " role="contentinfo">
-		<div class="wrapper--inner site-info">
+		<div class="wrapper--inner site-info flex--display-flex align-items-flex-end">
 			
 			<?php get_template_part( 'template-parts/content', 'social-media' ); ?>
 			

@@ -116,16 +116,15 @@ get_header(); ?>
 
 			==========================================
 			-->
-
+	
 			<?php
-
 			// check if the repeater field has rows of data
 			$skills_section_title = get_field('about_skills_title');
 			$skills_section_subtitle = get_field('about_skills_subtitle');
 
 			if ($skills_section_title || $skills_section_subtitle) {
 				
-				echo '<header class="wrapper--header wrapper-inner text--align-center">';
+				echo '<header class="wrapper--header wrapper--inner text--align-center">';
 
 					if ($skills_section_title) {
 						echo '<h3>' . $skills_section_title . '</h3>';
@@ -148,8 +147,8 @@ get_header(); ?>
 
 			<?php 
 			if( have_rows('about_page_skills') ):
-
-				echo '<section class="wrapper--inner flex--parent-center">';
+				
+				echo '<section class="wrapper--inner flex--parent-center ">';
 			 	// loop through the rows of data
 			    while ( have_rows('about_page_skills') ) : the_row();
 
@@ -176,18 +175,26 @@ get_header(); ?>
 			    // no rows found
 			endif;
 			echo '</section>';
-
 			?>
 			
 			<!-- 
 			==========================================
 
-			Section: Get in Touch - Contact Page
+			Section: View Live button
 
 			==========================================
 			-->
-			<p>Get in touch</p>
-			<?php get_template_part( './template-parts/content', 'contact' ); ?>
+			
+			<?php 
+				$contact_btn_text = get_field('link_to_another_page');
+				$contact_btn_url = get_field('link_to_another_page_url');
+
+			if ($contact_btn_text) {
+				echo '<div class="wrapper--inner">';
+					echo '<p class="button--large button--main-color button--center"><a href="' . $contact_btn_url . '">' . $contact_btn_text . '</a></p>';
+				echo '</div>';
+			}?>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
