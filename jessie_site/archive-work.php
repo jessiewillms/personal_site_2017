@@ -36,16 +36,25 @@ get_header(); ?>
 			</header><!-- .entry-header -->
 		<?php endif; ?>
 
-		<section class="wrapper--inner">
+		<section class="wrapper--inner ">
+			<?php $counter = 0; ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-							
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-
-				<div class="entry-content">
-
-					<?php the_content(); ?>
-
-				</div><!-- .entry-content -->
+				<?php if ( $counter % 2 == 0) {
+					$bkg = 'background--light-grey';
+				} else {
+					$bkg = ' ';
+				}
+				$counter++ ?>
+				<section class="wrapper--outer flex--parent-center <?php echo $bkg; ?>">
+					<div class="wrapper--flex-child-half">
+						<img src="<?php the_post_thumbnail_url(); ?>" alt="">
+					</div>
+					<div class="wrapper--flex-child-half">
+						<h2><?php the_title(); ?></h2>
+						<?php the_excerpt('20'); ?>
+						<p class="button--main-color"><a href="<?php the_permalink(); ?>">View work</a></p>
+					</div>
+				</section>
 
 			<?php endwhile; // end of the loop. ?>
 		</section>

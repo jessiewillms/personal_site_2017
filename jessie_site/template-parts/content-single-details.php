@@ -43,9 +43,12 @@
 				<p class="text--small <?php echo $title_colour; ?>">WordPress developer</p>
 
 				<div class="wrapper--inner-small align-center clearfix">
-					<p class="text--btn-small"><a class="<?php echo $title_colour; ?>" href="http://jessiewill.com/work">View work</a></p>
-					<p class="text--btn-small"><a class="<?php echo $title_colour; ?>" href="http://jessiewill.com/contact">Get in touch</a></p>
+					<p class="text--btn-small"><a class="<?php echo $title_colour; ?>" href="<?php echo get_site_url() . '/work' ?>">View work</a></p>
+					<p class="text--btn-small"><a class="<?php echo $title_colour; ?>" href="<?php echo get_site_url() . '/contact-page' ?>">Get in touch</a></p>
 				</div>
+
+				
+
 
 			</div>
 		</header><!-- .page-header -->
@@ -61,19 +64,34 @@
 
 	==========================================
 	-->
-
+	
 	<?php 
+		$work_client_copy = get_field('work_client_copy');
+		$work_client_sub_copy = get_field('work_client_sub_copy');
+
+		$client = "";
+		$client_by = "";
+
+		if ($work_client_copy) {
+			$client = '<strong>' . $work_client_copy . ':</strong> ';
+		}
+
+		if ($work_client_sub_copy) {
+			$client_by = '<strong>' . $work_client_sub_copy . ':</strong> ';
+		}
 
 		$client_name = get_field('work_client_title');
 		$client_sub_title = get_field('work_client_subtitle');
 		$client_images = get_field('work_images');
 
+			
+
 		if ($client_name) {
-			echo '<h3>' . $client_name . '</h3>';
+			echo '<h3>' . $client . $client_name . '</h3>';
 		}
 
 		if ($client_sub_title) {
-			echo '<p>' . $client_sub_title . '</p>';
+			echo '<p>' . $client_by . $client_sub_title . '</p>';
 		}
 
 		//==========================================
@@ -263,15 +281,17 @@
 	<!-- 
 	==========================================
 
-	Section: Next + Previous buttons
-
+	Section: Next + Previous buttons 
+	
+	
 	==========================================
 	-->
-	<div class="wrapper--next-prev flex--display-flex flex--parent-center">
+
+	<div class="wrapper--inner flex--display-flex flex--parent-center">
 		<?php 
-			previous_post_link('<p><strong>Previous</strong> %link</p>');
+			previous_post_link('<div class="wrapper--next-prev"><p class="text--small">Previous:</p><p> %link</p></div>');
 			echo '<img src="' . get_site_url() . '/wp-content/uploads/2017/01/JW_icon.png" class="image--small-image">';
-			next_post_link('<p><strong>Next</strong> %link</p>');
+			next_post_link('<div class="wrapper--next-prev"><p class="text--small">Next:</p><p> %link </p></div>');
 		?>
 	</div>
 

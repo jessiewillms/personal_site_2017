@@ -63,7 +63,7 @@ get_header(); ?>
 						        $hp_url = get_sub_field('about_page_button_url');
 						        $hp_btn_text = get_sub_field('about_page_button_text');
 
-						        echo '<p class="text--btn-small"><a href="' . $hp_url . '">' . $hp_btn_text . '</a></p>';
+						        echo '<p class="text--btn-small"><a href="' . $hp_url . '" class="text--color-white">' . $hp_btn_text . '</a></p>';
 
 						    endwhile;
 
@@ -127,7 +127,7 @@ get_header(); ?>
 				echo '<header class="wrapper--header wrapper--inner text--align-center">';
 
 					if ($skills_section_title) {
-						echo '<h3 class="text--color-dark-grey">' . $skills_section_title . '</h3>';
+						echo '<h2 class="text--color-dark-grey">' . $skills_section_title . '</h2>';
 					}
 
 					if ($skills_section_subtitle) {
@@ -191,7 +191,7 @@ get_header(); ?>
 
 			if ($contact_btn_text) {
 				echo '<div class="wrapper--inner">';
-					echo '<p class="button--large button--main-color button--center"><a href="' . $contact_btn_url . '">' . $contact_btn_text . '</a></p>';
+					echo '<p class="button--large button--main-color button--center"><a href="' . $contact_btn_url . '" class="text--color-white">' . $contact_btn_text . '</a></p>';
 				echo '</div>';
 			}?>
 

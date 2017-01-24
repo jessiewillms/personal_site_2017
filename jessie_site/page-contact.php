@@ -78,7 +78,7 @@ get_header(); ?>
 						        $hp_url = get_sub_field('contact_page_button_url');
 						        $hp_btn_text = get_sub_field('contact_page_button_text');
 
-						        echo '<p class="text--btn-small"><a href="' . $hp_url . '">' . $hp_btn_text . '</a></p>';
+						        echo '<p class="text--btn-small"><a href="' . $hp_url . '" class="text--color-white">' . $hp_btn_text . '</a></p>';
 
 						    endwhile;
 
