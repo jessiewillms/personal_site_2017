@@ -35,14 +35,14 @@ get_header(); ?>
 
 			if( !empty($image) ): ?>
 			
-				<header class="entry-header text--align-center clearfix" style="background-image:url(' <?php echo $image ?> ')">
+				<header class="wrapper--header entry-header text--align-center clearfix" style="background-image:url(' <?php echo $image ?> ')">
 					
 					<div class="wrapper--inner">
-						<h1><?php echo get_the_title(); ?></h1>
+						<h1 class="text--color-white"><?php echo get_the_title(); ?></h1>
 						<?php 
 						$tagline = get_field( "about_page_header_tagline" );
 							if( $tagline ) {
-							    echo '<p class="text--small">' . $tagline .  '</p>';
+							    echo '<p class="text--small text--color-white">' . $tagline .  '</p>';
 							} else {
 							    echo 'empty';
 							}
@@ -127,11 +127,11 @@ get_header(); ?>
 				echo '<header class="wrapper--header wrapper--inner text--align-center">';
 
 					if ($skills_section_title) {
-						echo '<h3>' . $skills_section_title . '</h3>';
+						echo '<h3 class="text--color-dark-grey">' . $skills_section_title . '</h3>';
 					}
 
 					if ($skills_section_subtitle) {
-						echo '<p>' . $skills_section_subtitle . '</p>';
+						echo '<p class="text--color-dark-grey">' . $skills_section_subtitle . '</p>';
 					}
 				echo '</header>';
 

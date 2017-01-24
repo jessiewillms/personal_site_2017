@@ -16,14 +16,14 @@ $image = get_field('header_background_image');
 
 if( !empty($image) ): ?>
 
-	<header class="entry-header text--align-center clearfix" style="background-image: url('<?php echo $image['url']; ?>');">
+	<header class="wrapper--header entry-header text--align-center clearfix" style="background-image: url('<?php echo $image['url']; ?>');">
 		
 		<div class="wrapper--inner">
-			<h1><?php echo get_the_title(); ?></h1>
+			<h1 class="text--color-white"><?php echo get_the_title(); ?></h1>
 			<?php 
 			$tagline = get_field( "homepage_header_tagline" );
 				if( $tagline ) {
-				    echo '<p class="text--small">' . $tagline .  '</p>';
+				    echo '<p class="text--small text--color-white">' . $tagline .  '</p>';
 				} else {
 				    echo 'empty';
 				}

@@ -9,8 +9,29 @@
 
 ?>
 
-<section class="no-results not-found">
+<section class="article wrapper--outer">
 	
+
+
+	<!-- 
+	==========================================
+
+	Section: CLient information + title
+
+	==========================================
+	-->
+	<?php
+	$work_client_title_colour = get_field('work_client_title_colour');
+	$title_colour = "";
+
+	if ($work_client_title_colour == 'light') {
+	 	$title_colour = 'text--color-white';
+	 	
+	} elseif ($work_client_title_colour == 'dark') {
+	 	$title_colour = 'text--color-dark-grey';
+	} ?>
+
+
 	<?php 
 		$image = get_the_post_thumbnail_url();
 		if( !empty($image) ):
@@ -18,12 +39,12 @@
 
 		<header class="entry-header text--align-center" style="background-image:url(' <?php echo $image ?> ')">
 			<div class="wrapper--inner">
-				<h1 class="page-title"><?php esc_html_e( get_the_title() ); ?></h1>
-				<p class="text--small">WordPress developer</p>
+				<h1 class="page-title <?php echo $title_colour; ?>"><?php esc_html_e( get_the_title() ); ?></h1>
+				<p class="text--small <?php echo $title_colour; ?>">WordPress developer</p>
 
 				<div class="wrapper--inner-small align-center clearfix">
-					<p class="text--btn-small"><a href="http://jessiewill.com/work">View work</a></p>
-					<p class="text--btn-small"><a href="http://jessiewill.com/contact">Get in touch</a></p>
+					<p class="text--btn-small"><a class="<?php echo $title_colour; ?>" href="http://jessiewill.com/work">View work</a></p>
+					<p class="text--btn-small"><a class="<?php echo $title_colour; ?>" href="http://jessiewill.com/contact">Get in touch</a></p>
 				</div>
 
 			</div>
@@ -121,10 +142,40 @@
 	<!-- 
 	==========================================
 
+	Section: Title + Sub-title
+
+	==========================================
+	-->
+	</header>
+	<?php
+
+	$tools_skills_used_title = get_field('tools_skills_used_title');
+	$tools_skills_used_subtitle = get_field('tools_skills_used_subtitle');
+
+	if ( $tools_skills_used_title || $tools_skills_used_subtitle ) {
+		echo '<header class="wrapper--header wrapper--inner">';
+	}
+	if ( $tools_skills_used_title ) {
+		echo '<h2>' . $tools_skills_used_title . '</h2>';
+	}
+
+	if ( $tools_skills_used_subtitle ) {
+		echo '<p>' . $tools_skills_used_subtitle . '</p>';
+	}
+
+	if (  $tools_skills_used_title || $tools_skills_used_subtitle ) {
+		echo '<header class="wrapper--header wrapper--inner">';
+	} ?>
+
+
+	<!-- 
+	==========================================
+
 	Section: Post Content
 
 	==========================================
 	-->
+
 	<?php
 
 	// check if the repeater field has rows of data
@@ -135,14 +186,44 @@
 
 	        // display a sub field value
 	        $skill_title = get_sub_field('skill_title');
-	        $skill_image = get_sub_field('skill_image')['url'];
+	        // $skill_image = get_sub_field('skill_image')['url'];
 
+	        // rwd 	:	Responsive Web Design
+	        // psd 	:	Design to WordPress
+	        // wp 	:	Custom WordPress development
+	        // sp 	:	Shopify development
+	        // js 	:	JavaScript app
 
-	        if ( $skill_title ) {
-	        	echo '<li class="wrapper--flex-child-sixth text--align-center">' . $skill_title;
+	        if ( $skill_title['value']  ) {
+	        	echo '<li class="wrapper--flex-child-sixth text--align-center">';
+	        		echo $skill_title['label'];
 
-	        	if ( $skill_image ) {
-	        		echo '<img src="' . $skill_image . '">';
+	        	if ( $skill_title['value'] == 'rwd' ) {
+	        		
+	        		echo '<img src="' . get_site_url() . '/wp-content/uploads/2017/01/JW_icon.png' . '">';
+
+	        	} elseif ( $skill_title['value'] == 'psd' ) {
+	        		
+	        		echo '<img src="' . get_site_url() . '/wp-content/uploads/2017/01/JW_icon.png' . '">';
+	        	
+	        	} elseif ( $skill_title['value'] == 'wp' ) {
+	        		
+	        		// echo $skill_title['label'];
+	        		echo '<img src="' . get_site_url() . '/wp-content/uploads/2017/01/JW_icon.png' . '">';
+
+	        	} elseif ( $skill_title['value'] == 'sp' ) {
+	        		
+	        		// echo $skill_title['label'];
+	        		echo '<img src="' . get_site_url() . '/wp-content/uploads/2017/01/JW_icon.png' . '">';
+
+	        	} elseif ( $skill_title['value'] == 'js' ) {
+	        		
+	        		// echo $skill_title['label'];
+	        		echo '<img src="' . get_site_url() . '/wp-content/uploads/2017/01/JW_icon.png' . '">';
+
+	        	} else {
+	        		
+	        		echo "none selected";
 	        	}
 
 	        	echo '</li>';
@@ -178,6 +259,22 @@
 	if ($btn_text) {
 		echo '<p class="button--large button--main-color button--center"><a href="' . $btn_url . '">' . $btn_text . '</a></p>';
 	}?>
+
+	<!-- 
+	==========================================
+
+	Section: Next + Previous buttons
+
+	==========================================
+	-->
+	<div class="wrapper--next-prev flex--display-flex flex--parent-center">
+		<?php 
+			previous_post_link('<p><strong>Previous</strong> %link</p>');
+			echo '<img src="' . get_site_url() . '/wp-content/uploads/2017/01/JW_icon.png" class="image--small-image">';
+			next_post_link('<p><strong>Next</strong> %link</p>');
+		?>
+	</div>
+
 
 	
 	</main><!-- .page-content -->

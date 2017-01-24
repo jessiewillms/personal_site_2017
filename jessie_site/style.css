@@ -61,6 +61,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
   --color_1: ;
 }
 
+p,
+h3 {
+	font-weight: 100;
+}
+
+
 li { list-style-type: none; }
 
 ul {
@@ -77,11 +83,36 @@ ul {
 	text-align: center;
 }
 
+.text--color-white {
+	color: var(--white);
+}
+.text--color-dark-grey {
+	color: var(--dark_grey);
+}
+
+.wrapper--header h1,
+.wrapper--header p {
+	/*color: var(--dark_grey);*/
+	/*margin: 0;*/
+}
+
+.wrapper--header h1 {
+	font-size: 65px;
+	padding: 5px 0;
+}
+
+.wrapper--header h1 + p {
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 20px;
+	letter-spacing: 5px;
+}
+
 .wrapper--header h2 + p::after {
 	content: "";
 	display: block;
 	margin: var(--padding) auto;
-	border-bottom: 2px solid var(--color_1);
+	border-bottom: 5px solid var(--blue);
 	max-width: 75px;
 }
 .wrapper--header {
@@ -94,10 +125,6 @@ ul {
 
 .wrapper--inner {
 	padding: 25px 0;
-}
-
-.wrapper--outer:nth-of-type(odd) {
-	background: #eaeef1;
 }
 
 @media (min-width: 767px) {
@@ -115,8 +142,17 @@ ul {
 
 .wrapper--inner-small .text--btn-small {
 	float: left;
+	max-width: calc(50% - 10px);
 	width: 50%;
+	margin: 0 5px;
 	text-align: center;
+	border: 2px solid var(--white);
+}
+
+.text--btn-small a {
+	/*color: var(--white);*/
+	padding: var(--padding);
+	display: block;
 }
 
 .wrapper--small-padding {
@@ -163,6 +199,9 @@ ul {
 .align-items-flex-end {
 	align-items: flex-end;
 }
+.flex--justify-content-flex-end {
+	justify-content: flex-end;
+}
 
 .flex--parent-center {
     display: flex;
@@ -203,6 +242,14 @@ ul {
 .wrapper-third-child-height {
 	height: calc(800px / 3 - 20px);
 	align-items: center;
+}
+
+.wrapper--next-prev p {
+	padding: 0 10px;
+}
+
+.image--small-image {
+	max-width: 20px;
 }
 
 /*================ Section: Flexbox Stuff ================*/
@@ -276,6 +323,146 @@ ul {
 	background: var(--white);
 }
 
+footer {
+	background: var(--dark_grey);
+	display: flex;
+}
+footer a {
+	color: var(--white);
+	margin: 0 5px;
+}
+
+
+
+/*================ Section: Gravity Forms ================*/
+.gfield .gfield_label {
+	font-weight: 100 !important;;
+	font-size: 16px;
+}
+
+.gform_wrapper ul li.gfield,
+.gform_wrapper .top_label .gfield_label {
+	margin-top: var(--padding) !important;;
+}
+
+.gform_wrapper .gform_footer input.button {
+	background: var(--blue) !important;
+	color: var(--white) !important;
+	border: 1px solid var(--blue) !important;
+}
+
+.gform_wrapper form {
+    flex-basis: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium {
+	width: 100% !important;
+}
+
+
+
+
+/*================ Section: MailChimp form ================*/
+
+#mc_embed_signup {
+	background: transparent !important;
+}
+
+#mc_embed_signup_scroll {
+	display: flex !important;
+	flex-wrap: wrap;
+    justify-content: space-around;
+	flex-basis: 100%;
+}
+
+#mc_embed_signup form {
+	padding: var(--padding);
+}
+
+#mc_embed_signup .mc-field-group { 
+	width: 100% !important;
+	padding: var(--padding);
+ }
+
+#mc_embed_signup .indicates-required { width: 100%; }
+
+.mc-field-group:nth-of-type(3),
+.mc-field-group:nth-of-type(4) {
+	max-width: calc(100%  / 2);
+	
+}
+
+#mc_embed_signup form > * {
+	font-size: 1rem;
+	color: #404040;
+	font-family: 'Lato', 'Georgia', serif;
+}
+
+#mc_embed_signup .mc-field-group {
+	padding-bottom: 20px !important;
+}
+
+
+/*================ Section: Font Awesome ================*/
+
+.fa {
+	font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -303,8 +490,8 @@ ul {
 
 html {
 	font-family: sans-serif;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
+	-webkit-text-size-adjust: 62.6%;
+	-ms-text-size-adjust:     62.6%;
 }
 
 body {
@@ -316,7 +503,6 @@ aside,
 details,
 figcaption,
 figure,
-footer,
 header,
 main,
 menu,
@@ -346,6 +532,7 @@ template {
 
 a {
 	background-color: transparent;
+	color: var(--color_1);
 }
 
 a:active,
@@ -367,7 +554,8 @@ dfn {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 2rem;
+	font-weight: 100;
 	margin: 0.67em 0;
 }
 
@@ -422,7 +610,7 @@ kbd,
 pre,
 samp {
 	font-family: monospace, monospace;
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 button,
@@ -534,6 +722,7 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+
 body,
 button,
 input,
@@ -542,7 +731,7 @@ textarea {
 	color: #404040;
 	font-family: 'Lato', 'Georgia', serif;
 	font-size: 16px;
-	font-size: 1rem;
+	font-size: 1.6rem;
 	line-height: 1.5;
 }
 
@@ -553,10 +742,27 @@ h4,
 h5,
 h6 {
 	clear: both;
+	margin: 0;
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
+}
+
+#mc_embed_signup .mc-field-group input,
+#mc_embed_signup .mc-field-group label,
+p,
+li,
+a {
+	font-size: 1rem;
+}
+
+#mc_embed_signup h2,
+h2 {
+	font-size: 1.3rem;
+}
+h3 {
+	font-size: 1.1rem;
 }
 
 dfn,

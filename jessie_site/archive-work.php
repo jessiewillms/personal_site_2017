@@ -19,7 +19,7 @@ get_header(); ?>
 
 			if( !empty($image) ): ?>
 			
-			<header class="entry-header text--align-center clearfix" style="background-image:url(' <?php echo $image ?> ')">
+			<header class="wrapper--header entry-header text--align-center clearfix" style="background-image:url(' <?php echo $image ?> ')">
 				
 				<div class="wrapper--inner">
 					<h1><?php echo get_the_title(); ?></h1>
