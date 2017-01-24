@@ -197,12 +197,12 @@ ul {
 
 #site-navigation {
     position: fixed;
-    top: 0;
+    top: 50px;
     left: 0;
     right: 0;
     display: block;
     margin: 0 auto;
-    padding: var(--padding_large) var(--padding) var(--padding) var(--padding);
+    padding: var(--padding);
     background: var(--white);
 }
 
@@ -371,14 +371,15 @@ ul {
 	flex-direction: column;
 }
 
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
   .flex-parent-column > p {
 	min-height: 100px;
   }
-}
+}*/
 
 .flex-parent-column > p {
 	flex-grow: 1;
+	margin-top: 5px;
 }
 
 #gform_wrapper_1 {
@@ -551,7 +552,9 @@ footer a {
 }
 
 
-
+.menu-item::hover {
+    background: red;
+}
 
 
 
@@ -898,8 +901,30 @@ a {
 h2 {
 	font-size: 1.3rem;
 }
+
+h2 {
+    position: relative;
+}
+h2::after {
+    content: "•";
+    position: absolute;
+    bottom: 0px;
+    display: inline-block;
+    color: var(--blue);
+    padding: 0 0 0 2px;
+    font-size: 15px;
+}
+
 h3 {
 	font-size: 1.1rem;
+}
+h3::before {
+	content: "";
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin: -2px 5px -2px 0;
+	background: var(--blue);
 }
 
 dfn,
@@ -1184,6 +1209,12 @@ a:active {
 	text-decoration: none;
 }
 
+/*.main-navigation li a::hover {
+	border-bottom: 15px solid red;
+	margin-bottom: -10px; 
+	display: inline-block;
+}*/
+
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
@@ -1208,9 +1239,10 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
+
 }
 
-.main-navigation ul ul :hover > a,
+.main-navigation ul ul:hover > a,
 .main-navigation ul ul .focus > a {
 }
 
